@@ -2,7 +2,7 @@ import { loginService } from "@/service/login";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
-export const { auth, signOut, signIn } = NextAuth({
+export const { auth,signIn } = NextAuth({
   providers: [
     Credentials({
       credentials: {
@@ -29,7 +29,7 @@ export const { auth, signOut, signIn } = NextAuth({
   },
   strategy: "jwt",
 
-  pages: {
-    signIn: "/login",
-  },
+  // pages: {
+  //   signIn: "/login",
+  // },
 });

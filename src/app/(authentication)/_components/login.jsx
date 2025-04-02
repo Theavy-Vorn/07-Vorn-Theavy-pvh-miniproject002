@@ -5,12 +5,13 @@ import { Label } from "@/components/ui/label";
 import { KeyRound, Mail } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { loginAction } from "@/action/auth-action";
 
 export default function LoginComponent() {
   return (
     
-    <form className="space-y-6 bg-white">
-      action={loginAction}
+    <form action = {loginAction} className="space-y-6 bg-white">
+      
       {/* email */}
       <div>
         <Label
