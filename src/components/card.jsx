@@ -8,7 +8,8 @@ import {
 import { Clock, Ellipsis } from "lucide-react";
 import React from "react";
 
-export default function CardComponent() {
+export default async function CardComponent() {
+
   return (
     <div className="border border-gray-300 rounded-xl mt-8">
       <div className="p-5">

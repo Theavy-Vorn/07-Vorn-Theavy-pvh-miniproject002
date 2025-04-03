@@ -1,15 +1,18 @@
 "use server";
 
 import { signIn } from "@/auth";
-import { redirect } from "next/navigation";
+// import { redirect } from "next/navigation";
 
 export const loginAction = async (formData) => {
   const email = formData.get("email");
   const password = formData.get("password");
-  await signIn("credentails",{
+  
+  console.log("form data",email,password);
+  await signIn("credentials",{
     email,
     password,
-    redirect:false
+    redirectTo: "/workspace"
+    // redirect:true
   });
-  redirect("/");
+  // redirect("/");
 };

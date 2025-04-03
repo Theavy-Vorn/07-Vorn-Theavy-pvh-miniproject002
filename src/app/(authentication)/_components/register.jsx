@@ -1,4 +1,5 @@
 "use client";
+import { registerAction } from "@/action/register-action";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -6,9 +7,17 @@ import { KeyRound, Mail, UserRound } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
+
 export default function RegisterComponent() {
   return (
-    <form className="space-y-6">
+    <form action = {registerAction} className="space-y-6"
+    onSubmit={async (e) => {
+      e.preventDefault(); // Prevent form from default submission
+      const formData = new FormData(e.target);
+      await registerAction(formData); // Trigger registration action
+    }}
+     >
+      
       {/* username */}
       <div>
         <Label
@@ -20,6 +29,7 @@ export default function RegisterComponent() {
 
         <Input
           type="text"
+          name="user"
           placeholder="Please type your username"
           className={` bg-ghost-white py-2.5 px-4 rounded-lg w-full text-light-steel-blue/90`}
         />
@@ -35,6 +45,7 @@ export default function RegisterComponent() {
         </Label>
 
         <Input
+          name="email"
           type="text"
           placeholder="Please type your email"
           className={`bg-ghost-white py-2.5 px-4 rounded-lg w-full text-light-steel-blue/90`}
@@ -52,6 +63,7 @@ export default function RegisterComponent() {
 
         <Input
           type="password"
+          name="password"
           placeholder="Please type your password"
           className={`bg-ghost-white py-2.5 px-4 rounded-lg w-full text-light-steel-blue/90`}
         />

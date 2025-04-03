@@ -23,6 +23,7 @@ export default function LoginComponent() {
 
         <Input
           type="text"
+          name="email"
           placeholder="Please type your email"
           className={`bg-ghost-white py-2.5 px-4 rounded-lg w-full text-light-steel-blue/90`}
         />
@@ -39,6 +40,7 @@ export default function LoginComponent() {
 
         <Input
           type="password"
+          name="password"
           placeholder="Please type your password"
           className={`bg-ghost-white py-2.5 px-4 rounded-lg w-full text-light-steel-blue/90`}
         />

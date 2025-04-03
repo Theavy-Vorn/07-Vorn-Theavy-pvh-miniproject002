@@ -3,8 +3,8 @@ import { auth } from "./auth";
 
 export async function middleware(req) {
   const session = await auth();
-
-  if (!session?.token) {
+  
+  if (!session) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
@@ -12,5 +12,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/", "/favorite","/workspace"],
+  matcher: ["/workspace/:path*"],
 };

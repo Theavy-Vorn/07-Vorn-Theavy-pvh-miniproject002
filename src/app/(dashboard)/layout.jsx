@@ -44,6 +44,7 @@ export default function RootLayout({ children }) {
             <CardComponent />
             <CardComponent />
            
+           
         </div>
         </div>
         </div>     
